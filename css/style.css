@@ -1,7 +1,4 @@
-/* RESET */
-* {
-  box-sizing: border-box;
-}
+/* Reset */
 
 body,
 h1,
@@ -14,11 +11,15 @@ ul {
 }
 
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, serif;
   color: #252525;
 }
 
-/* MENU */
+* {
+  box-sizing: border-box;
+}
+
+/* Menu */
 
 .menu {
   background: #252525;
@@ -60,7 +61,22 @@ a.menu-logo {
   font-size: 1.125em;
 }
 
-/* INTRO */
+@media (max-width: 739px) {
+  .menu {
+    text-align: center;
+  }
+  a.menu-logo {
+    float: none;
+    margin: 0 auto;
+  }
+  .menu-nav {
+    float: none;
+    clear: both;
+  }
+}
+
+/* Intro */
+
 .intro {
   background: url('../img/bg-intro.jpg') no-repeat center center;
   background-size: cover;
@@ -70,25 +86,32 @@ a.menu-logo {
 }
 
 .intro h1 {
-  font-size: 3em;
   text-transform: uppercase;
+  font-size: 3em;
 }
 
 .intro h1::after {
   content: '';
   display: block;
-  width: 60px;
-  height: 2px;
+  width: 20px;
+  height: 4px;
   background: #fff;
   margin: 10px auto;
 }
 
 .intro p {
   font-style: italic;
-  font-size: 18px;
+  font-size: 1.125em;
 }
 
-/* SOBRE */
+@media (max-width: 739px) {
+  .intro {
+    padding: 60px 0;
+  }
+}
+
+/* Sobre */
+
 .sobre {
   padding: 60px 0;
 }
@@ -105,15 +128,6 @@ a.menu-logo {
   clear: both;
 }
 
-.sobre h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: #000;
-  margin: 10px auto;
-}
-
 .sobre h2 {
   text-align: center;
   font-size: 2.25em;
@@ -121,8 +135,8 @@ a.menu-logo {
 }
 
 .sobre-item {
-  float: left;
   width: 460px;
+  float: left;
   margin: 0 10px;
 }
 
@@ -132,21 +146,21 @@ a.menu-logo {
 }
 
 .sobre-item h3 {
+  font-size: 2.25em;
+  line-height: 1em;
+  background: #252525;
+  width: 220px;
   color: #fff;
   font-style: italic;
   font-weight: normal;
   text-align: center;
-  line-height: 1em;
-  font-size: 2.25em;
-  background: #252525;
-  width: 220px;
   padding: 5px 0 10px 0;
   top: -25px;
   position: relative;
 }
 
 .sobre > p {
-  font-size: 1.25em;
+  font-size: 1.125em;
   line-height: 1.4em;
   font-style: italic;
   text-align: center;
@@ -154,7 +168,27 @@ a.menu-logo {
   max-width: 460px;
 }
 
-/* PRODUTOS */
+@media (min-width: 740px) and (max-width: 980px) {
+  .sobre-container {
+    max-width: 720px;
+  }
+  .sobre-item {
+    width: 340px;
+  }
+}
+
+@media (max-width: 739px) {
+  .sobre-container {
+    max-width: 300px;
+  }
+  .sobre-item {
+    width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* Produtos */
+
 .produtos {
   background: #e7e4d8;
   padding: 60px 0;
@@ -175,15 +209,15 @@ a.menu-logo {
 }
 
 .produtos-item {
-  float: left;
   width: 300px;
+  float: left;
+  margin: 0 10px 20px 10px;
 }
 
 .produtos-item h2 {
   text-align: center;
-  font-size: 2.5em;
+  font-size: 2.25em;
   margin-bottom: 20px;
-  margin: 0 10px 0 10px;
 }
 
 .produtos-item h2::before {
@@ -195,7 +229,7 @@ a.menu-logo {
   border-radius: 50%;
   margin: 20px auto;
   border: 5px solid #e7e4d8;
-  box-shadow: 0 0 0 10px currentColor;
+  box-shadow: 0 0 0 5px currentColor;
 }
 
 h2.produto-1::before {
@@ -216,20 +250,39 @@ h2.produto-3::before {
 }
 
 .produtos-btn {
-  display: block;
   width: 180px;
   border: 3px solid #252525;
   color: #252525;
   text-decoration: none;
-  padding: 15px 0;
+  display: block;
+  margin: 20px auto 0 auto;
+  text-align: center;
   font-size: 1.125em;
   font-weight: bold;
   text-transform: uppercase;
-  text-align: center;
-  margin: 20px auto 0 auto;
+  padding: 15px 0;
 }
 
-/* LOCAIS */
+@media (min-width: 740px) and (max-width: 980px) {
+  .produtos-container {
+    max-width: 720px;
+  }
+  .produtos-item {
+    width: 220px;
+  }
+}
+
+@media (max-width: 739px) {
+  .produtos-container {
+    max-width: 300px;
+  }
+  .produtos-item {
+    margin: 0 auto 20px auto;
+  }
+}
+
+/* Locais */
+
 .locais {
   max-width: 960px;
   margin: 0 auto;
@@ -250,12 +303,12 @@ h2.produto-3::before {
 
 .locais-item img {
   width: 460px;
-  float: left;
   display: block;
+  float: left;
   margin: 0 10px;
 }
 
-.locais-item .locais-1 {
+.locais-item > div {
   width: 460px;
   float: left;
   margin: 0 10px;
@@ -274,17 +327,37 @@ h2.produto-3::before {
 }
 
 .locais-item a {
-  border: 3px solid #252525;
-  color: #252525;
-  text-decoration: none;
-  padding: 10px 15px;
   font-size: 1.125em;
-  font-weight: bold;
   text-transform: uppercase;
-  text-align: center;
+  text-decoration: none;
+  border: 3px solid;
+  color: #252525;
+  padding: 10px 20px;
 }
 
-/* ASSINE */
+@media (min-width: 740px) and (max-width: 980px) {
+  .locais {
+    max-width: 720px;
+  }
+  .locais-item > div,
+  .locais-item img {
+    width: 340px;
+  }
+}
+
+@media (max-width: 739px) {
+  .locais {
+    max-width: 300px;
+  }
+  .locais-item > div,
+  .locais-item img {
+    width: 300px;
+    margin: 0px;
+  }
+}
+
+/* Assine */
+
 .assine {
   background: #e7e4d8;
   padding: 30px 0;
@@ -315,7 +388,6 @@ h2.produto-3::before {
 .assine-info p {
   font-size: 1.5em;
   font-style: italic;
-  margin-left: 20px;
 }
 
 .assine form {
@@ -328,29 +400,53 @@ h2.produto-3::before {
   display: none;
 }
 
-.assine form input {
-  width: 294px;
+.assine input {
+  width: 320px;
   border: 3px solid #252525;
-  padding: 20px;
   background: none;
-  font-style: italic;
   font-size: 1.5em;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-family: Georgia, serif;
   padding: 10px;
   float: left;
 }
 
 .assine button {
   background: #252525;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  border: none;
+  font-family: Georgia, serif;
   text-transform: uppercase;
   font-size: 1.5em;
   width: 140px;
   padding: 13px 0;
   color: #fff;
-  border: none;
   cursor: pointer;
 }
+
+@media (min-width: 740px) and (max-width: 980px) {
+  .assine-container {
+    max-width: 720px;
+  }
+  .assine-info,
+  .assine form,
+  .assine input {
+    width: 340px;
+  }
+}
+
+@media (max-width: 739px) {
+  .assine-container {
+    max-width: 300px;
+  }
+  .assine-info,
+  .assine form,
+  .assine input {
+    width: 300px;
+    margin: 10px 0 0 0;
+  }
+}
+
+/*Footer*/
 
 .footer {
   background: #d6d3c8;
@@ -376,8 +472,22 @@ h2.produto-3::before {
   line-height: 1.4em;
 }
 
-.footer .footer-container img {
+.footer img {
   float: right;
   margin: 0 10px;
   display: block;
+}
+
+@media (max-width: 739px) {
+  .footer-container {
+    max-width: 300px;
+  }
+  .footer p {
+    float: none;
+    margin: 0px;
+  }
+  .footer img {
+    float: none;
+    margin: 20px 0;
+  }
 }
